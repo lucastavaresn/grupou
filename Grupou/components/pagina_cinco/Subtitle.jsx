@@ -10,6 +10,6 @@ export default function Subtitle(props) {
 }
 
 const styles = StyleSheet.create({ subtitle: {
-    color: "#3F3F3F",
-    fontSize: 12
+    color: "#999CAE",
+    fontSize: 13
 }})

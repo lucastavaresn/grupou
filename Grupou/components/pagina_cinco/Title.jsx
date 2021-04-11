@@ -9,4 +9,6 @@ export default function Title(props) {
   );
 }
 
-const styles = StyleSheet.create({ title: { fontWeight: "bold", fontSize: 18 } });
+const styles = StyleSheet.create({
+  title: { fontWeight: "bold", fontSize: 20, color: "#2A314C" },
+});

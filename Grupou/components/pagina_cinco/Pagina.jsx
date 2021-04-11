@@ -42,21 +42,18 @@ export default function Pagina() {
               uri:
                 "https://media-exp1.licdn.com/dms/image/C4D03AQFaaD3sxM3Vqg/profile-displayphoto-shrink_200_200/0/1530308861887?e=1623283200&v=beta&t=1Kgq3Zv7Z22n58QVA00Pl6PLrb6_fJzvN_BMWBwrbIY",
             }}
-            size="xlarge"
-            height={90}
-            width={90}
+            size={125}
             rounded
           >
             <Badge
-              badgeStyle={{ width: 20, height: 20, borderRadius: 10 }}
+              badgeStyle={{ height: 20, width: 20, borderRadius: 50 }}
               status="success"
               containerStyle={{
                 position: "absolute",
-                bottom: -1,
-                right: -1,
-                width: 20,
-                height: 20,
+                bottom: 5,
+                right: 5,
               }}
+              size={100}
             />
           </Avatar>
         </View>
@@ -69,42 +66,20 @@ export default function Pagina() {
       </View>
       <Divider style={styles.divider} />
       <Text style={styles.skill}>Hard Skill</Text>
-      <View>
+      <View style={styles.viewHardSkill}>
         {hardskill.map((item, index) => (
           <PercentageBar key={index} {...item} />
         ))}
       </View>
       <Text style={styles.skill}>Soft Skill</Text>
-      <View style={{ flexDirection: "row", flexWrap: "wrap" }}>
+      <View style={styles.viewSoftSkill}>
         {softskill.map((item, index) => (
           <BlueSkill key={index} {...item} />
         ))}
       </View>
-      <View style={{alignItems: "center", justifyContent: "flex-end"}}>
-        <TouchableOpacity
-          style={{
-            fontWeight: "bold",
-            width: 150,
-            flexDirection: "row",
-            backgroundColor: "#A51966",
-            alignItems: "center",
-            justifyContent: "center",
-            paddingVertical: 20,
-            paddingHorizontal: 40,
-            borderRadius: 5,
-            width: 200,
-          }}
-        >
-          <Text
-            style={{
-              textAlign: "center",
-              color: "#FFF",
-              fontSize: 16,
-              fontWeight: "bold",
-            }}
-          >
-            Fechar
-          </Text>
+      <View style={styles.viewButtonLilas}>
+        <TouchableOpacity style={styles.buttonLilas}>
+          <Text style={styles.buttonLilasText}>Fechar</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -119,7 +94,7 @@ const styles = StyleSheet.create({
   header: {
     flexDirection: "row",
     alignItems: "center",
-    width: 360
+    width: 360,
     // backgroundColor: "#987",
   },
   viewAvatar: {
@@ -129,12 +104,41 @@ const styles = StyleSheet.create({
     width: 200,
   },
   divider: {
-    backgroundColor: "#000",
+    backgroundColor: "#999CAE50",
     marginVertical: 30,
+    height: 1,
   },
   skill: {
     fontWeight: "bold",
     fontSize: 20,
-    marginBottom: 10,
+    marginBottom: 15,
+  },
+  viewHardSkill: {
+    marginBottom: 20,
+  },
+  viewSoftSkill: { flexDirection: "row", flexWrap: "wrap" },
+  viewButtonLilas: {
+    alignItems: "center",
+    justifyContent: "flex-end",
+    flex: 1,
+    paddingBottom: 5,
+  },
+  buttonLilas: {
+    fontWeight: "bold",
+    width: 150,
+    // flexDirection: "row",
+    backgroundColor: "#A51966",
+    alignItems: "center",
+    justifyContent: "center",
+    paddingVertical: 30,
+    paddingHorizontal: 60,
+    borderRadius: 5,
+    width: 240,
+  },
+  buttonLilasText: {
+    textAlign: "center",
+    color: "#FFF",
+    fontSize: 16,
+    fontWeight: "bold",
   },
 });

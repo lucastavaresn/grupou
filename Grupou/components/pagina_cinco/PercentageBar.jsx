@@ -27,6 +27,6 @@ const styles = StyleSheet.create({
   percentageBar: {
     flexDirection: "row",
     alignItems: "center",
-    marginBottom: 15,
+    marginBottom: 20,
   },
 });
