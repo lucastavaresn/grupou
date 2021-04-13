@@ -1,11 +1,11 @@
-import { Avatar, Badge, Divider, Button } from "react-native-elements";
-
+import { Avatar, Badge, Divider } from "react-native-elements";
 import React from "react";
 import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import Title from "./Title";
 import Subtitle from "./Subtitle";
 import PercentageBar from "./PercentageBar";
 import BlueSkill from "./BlueSkill";
+import MyButton from "./MyButton";
 
 export default function Pagina() {
   const hardskill = [
@@ -58,7 +58,7 @@ export default function Pagina() {
           </Avatar>
         </View>
         <View style={styles.viewTitles}>
-          <Title>Kelwin</Title>
+          <Title styles={{textAlign: "auto"}}>Kelwin</Title>
           <Subtitle>
             Está no grupo de desenvolvimento de aplicações móveis
           </Subtitle>
@@ -78,9 +78,7 @@ export default function Pagina() {
         ))}
       </View>
       <View style={styles.viewButtonLilas}>
-        <TouchableOpacity style={styles.buttonLilas}>
-          <Text style={styles.buttonLilasText}>Fechar</Text>
-        </TouchableOpacity>
+        <MyButton button={styles.buttonLilas} textButton={styles.buttonLilasText}>Fechar</MyButton>
       </View>
     </View>
   );
