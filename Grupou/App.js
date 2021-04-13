@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+
 import { SafeAreaView } from 'react-native-safe-area-context';
 import Pagina from './components/pagina_cinco/Pagina';
 
@@ -10,12 +11,14 @@ export default function App() {
       <Pagina></Pagina>
       <StatusBar style="auto" />
     </SafeAreaView>
+
   );
 }
 
 const styles = StyleSheet.create({
   AndroidSafeArea: {
     flex: 1,
+    flexDirection:"column",
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
