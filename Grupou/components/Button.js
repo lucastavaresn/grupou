@@ -15,6 +15,7 @@ export function ButtonCustom({text, filled=false, press}) {
 
 const styles = StyleSheet.create({
     container: {
+        flex: 1,
         flexDirection: 'row'
     },
     btnFilled: {
