@@ -1,11 +1,11 @@
 import React from "react";
-import { StyleSheet, View, TextInput, Text } from "react-native";
+import { StyleSheet,ScrollView, View, TextInput, Text } from "react-native";
 import { Button, Icon } from "react-native-elements";
 import MyButton from "../pagina_cinco/MyButton";
 export default function PassoDois() {
   return (
     <View style={{ flex: 1, width: 340,  }}>
-      <View style={{flex: 1}}>
+      <ScrollView style={{flex: 1}}>
         <View style={{ justifyContent: "flex-end", paddingTop: 30 }}>
           <Button
             icon={{
@@ -83,7 +83,7 @@ export default function PassoDois() {
             Concluir
           </MyButton>
         </View>
-      </View>
+      </ScrollView>
     </View>
   );
 }
