@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+
 import { SafeAreaView } from 'react-native-safe-area-context';
 import PassoDois from './components/pagina_dois/PassoDois';
 import PassoUm from './components/pagina_dois/PassoUm';
@@ -12,12 +13,14 @@ export default function App() {
       {/* <PassoUm></PassoUm> */}
       <StatusBar style="auto" />
     </SafeAreaView>
+
   );
 }
 
 const styles = StyleSheet.create({
   AndroidSafeArea: {
     flex: 1,
+    flexDirection:"column",
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
