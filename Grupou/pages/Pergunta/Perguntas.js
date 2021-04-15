@@ -1,18 +1,18 @@
 import React, { useState } from 'react';
-import { Image, StyleSheet, ActivityIndicator } from 'react-native';
+import { Image } from 'react-native';
 import acerto from '../../assets/icones/icone_certo.png';
 import erro from '../../assets/icones/icone_errado.png';
 
-
 import {
 	Container,
-	ProgressBarGrey,
+	BarraDeProgressoCinza,
+	BarraDeProgresso,
 	Imagem,
-	ProgressBar,
 	TextoNegrito,
 	Texto,
 	Alternativas,
 	BotaoAlternativa,
+	TextoColorido,
 	TextoAlternativa,
 	Resultado,
 	TextoResultado,
@@ -22,17 +22,17 @@ import {
 } from './styles';
 
 export default function Pergunta() {
-
-	const [btnText, SetBtnText] = useState("Confirmar");
-
+	const acertos = 97;
+	const [TextoBotao, SetTextoBotao] = useState("Confirmar");
+	const certa = 'certa';
+	const errada = 'errada';
 
 	return (
-		<>	
-		
-			<ProgressBarGrey/>
-			<ProgressBar/>
+		<>
+			<BarraDeProgressoCinza />
+			<BarraDeProgresso />
+
 			<Container>
-			
 				<TextoNegrito>
 					Questão do dia
         		</TextoNegrito>
@@ -47,82 +47,60 @@ export default function Pergunta() {
         		</TextoNegrito>
 
 				<Alternativas>
-					<BotaoAlternativa
-						style={btnText === "Conluido" ? styles.redBorder : false}
-						>
-						
-						<TextoAlternativa style={btnText === "Conluido" ? styles.redTxt : false}>
-							A    
-						</TextoAlternativa>
-
+					<BotaoAlternativa clicado={TextoBotao === "Conluido" && errada} >
+						<TextoColorido clicado={TextoBotao === "Conluido" && errada} >
+							A.
+						</TextoColorido>
 						<TextoAlternativa>
-							. De programação
+							De programação
 						</TextoAlternativa>
-						<Imagem 
-							clicked={btnText === "Conluido" ? true : false}>
-							<Image source={erro} style={{width:30, height:30}}/>
+						<Imagem clicado={TextoBotao === "Conluido"} >
+							<Image source={erro} style={{ width: 30, height: 30 }} />
 						</Imagem>
 					</BotaoAlternativa>
-					<BotaoAlternativa 
-						clicked={btnText === "Conluido" ? true : false}> 
-
-						<TextoAlternativa style={btnText === "Conluido" ? styles.greenTxt : false}>
-							B   
-						</TextoAlternativa>
+					<BotaoAlternativa clicado={TextoBotao === "Conluido" && certa} >
+						<TextoColorido clicado={TextoBotao === "Conluido" && certa} >
+							B.
+						</TextoColorido>
 						<TextoAlternativa>
-							. De marcação
+							De marcação
 						</TextoAlternativa>
-						<Imagem 
-							clicked={btnText === "Conluido" ? true : false}>
-							<Image source={acerto} style={{width:30, height:30}}/>
+						<Imagem clicado={TextoBotao === "Conluido"} >
+							<Image source={acerto} style={{ width: 30, height: 30 }} />
 						</Imagem>
 					</BotaoAlternativa>
 					<BotaoAlternativa>
+						<TextoColorido>
+							C.
+						</TextoColorido>
 						<TextoAlternativa>
-							C. Figura de linguagem
+							Figura de linguagem
 						</TextoAlternativa>
 					</BotaoAlternativa>
 					<BotaoAlternativa>
+						<TextoColorido>
+							D.
+						</TextoColorido>
 						<TextoAlternativa>
-							D. De português
+							De português
 						</TextoAlternativa>
 					</BotaoAlternativa>
 				</Alternativas>
-            
+
 				<Resultado>
-					<TextoResultadoAcertos 
-						clicked={btnText === "Conluido" ? true : false}>
-						97% {/* {acertos}% */}
+					<TextoResultadoAcertos clicado={TextoBotao === "Conluido"} >
+						{acertos}%
 					</TextoResultadoAcertos>
-					<TextoResultado 
-						clicked={btnText === "Conluido" ? true : false}>
+					<TextoResultado clicado={TextoBotao === "Conluido"}>
 						dos Alunos acertaram esta questão
 					</TextoResultado>
 				</Resultado>
-				
 
-				<BotaoRosa
-				onPress={ () =>
-					SetBtnText(btnText === "Concluido" ? "Confirmar" : "Conluido")
-				}>
-					<TextoBotaoRosa>{btnText}</TextoBotaoRosa>
+				<BotaoRosa onPress={() => SetTextoBotao(TextoBotao === "Concluido" ? "Confirmar" : "Conluido")}>
+					<TextoBotaoRosa>{TextoBotao}</TextoBotaoRosa>
 				</BotaoRosa>
 
 			</Container>
 		</>
 	);
 }
-
-
-const styles = StyleSheet.create({
-	redBorder: {
-	  borderWidth: 1,
-	  borderColor: "red",
-	},
-	redTxt: {
-		color: "red",
-	  },
-	greenTxt: {
-	color: "#3BCD7E",
-	},
-  });
