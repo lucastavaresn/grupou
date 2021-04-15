@@ -8,7 +8,6 @@ export default function App() {
   return (
     <ScrollView>
       <Pergunta />
-      {/* <Pergunta_Resultado /> */}
     </ScrollView>
 
   );
