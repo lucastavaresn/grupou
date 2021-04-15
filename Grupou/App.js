@@ -11,17 +11,14 @@ export default function App()
       {
           id: '01',
           curso: 'Gestão de Design',
-          desc: ['mouse', ' 10.00']
       },
       {
           id: '02',
           curso: 'Fotografia',
-          desc: ['teclado', ' 20.00']
       },
       {
           id: '03',
           curso: 'Webdesign',
-          desc: ['monitor', ' 30.00']
       }
   ]
 
