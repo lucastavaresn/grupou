@@ -1,13 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Image, StyleSheet, ActivityIndicator } from 'react-native';
+import acerto from '../../assets/icones/icone_certo.png';
+import erro from '../../assets/icones/icone_errado.png';
+
 
 import {
 	Container,
+	ProgressBarGrey,
+	Imagem,
+	ProgressBar,
 	TextoNegrito,
 	Texto,
 	Alternativas,
 	BotaoAlternativa,
 	TextoAlternativa,
-	TextoColorido,
 	Resultado,
 	TextoResultado,
 	TextoResultadoAcertos,
@@ -15,10 +21,18 @@ import {
 	TextoBotaoRosa
 } from './styles';
 
-export default function Pergunta_Resultado() {
+export default function Pergunta() {
+
+	const [btnText, SetBtnText] = useState("Confirmar");
+
+
 	return (
-		<>
+		<>	
+		
+			<ProgressBarGrey/>
+			<ProgressBar/>
 			<Container>
+			
 				<TextoNegrito>
 					Questão do dia
         		</TextoNegrito>
@@ -33,55 +47,82 @@ export default function Pergunta_Resultado() {
         		</TextoNegrito>
 
 				<Alternativas>
-					<BotaoAlternativa>
-						<TextoColorido>
-							A.
-						</TextoColorido>
+					<BotaoAlternativa
+						style={btnText === "Conluido" ? styles.redBorder : false}
+						>
+						
+						<TextoAlternativa style={btnText === "Conluido" ? styles.redTxt : false}>
+							A    
+						</TextoAlternativa>
+
 						<TextoAlternativa>
-							De programação
+							. De programação
+						</TextoAlternativa>
+						<Imagem 
+							clicked={btnText === "Conluido" ? true : false}>
+							<Image source={erro} style={{width:30, height:30}}/>
+						</Imagem>
+					</BotaoAlternativa>
+					<BotaoAlternativa 
+						clicked={btnText === "Conluido" ? true : false}> 
+
+						<TextoAlternativa style={btnText === "Conluido" ? styles.greenTxt : false}>
+							B   
+						</TextoAlternativa>
+						<TextoAlternativa>
+							. De marcação
+						</TextoAlternativa>
+						<Imagem 
+							clicked={btnText === "Conluido" ? true : false}>
+							<Image source={acerto} style={{width:30, height:30}}/>
+						</Imagem>
+					</BotaoAlternativa>
+					<BotaoAlternativa>
+						<TextoAlternativa>
+							C. Figura de linguagem
 						</TextoAlternativa>
 					</BotaoAlternativa>
 					<BotaoAlternativa>
-						<TextoColorido>
-							B.
-						</TextoColorido>
 						<TextoAlternativa>
-							De marcação
-						</TextoAlternativa>
-					</BotaoAlternativa>
-					<BotaoAlternativa>
-						<TextoColorido>
-							C.
-						</TextoColorido>
-						<TextoAlternativa>
-							Figura de linguagem
-						</TextoAlternativa>
-					</BotaoAlternativa>
-					<BotaoAlternativa>
-						<TextoColorido>
-							D.
-						</TextoColorido>
-						<TextoAlternativa>
-							De português
+							D. De português
 						</TextoAlternativa>
 					</BotaoAlternativa>
 				</Alternativas>
-
-				<Resultado >
-					<TextoResultadoAcertos>
-
+            
+				<Resultado>
+					<TextoResultadoAcertos 
+						clicked={btnText === "Conluido" ? true : false}>
+						97% {/* {acertos}% */}
 					</TextoResultadoAcertos>
-					<TextoResultado>
-
+					<TextoResultado 
+						clicked={btnText === "Conluido" ? true : false}>
+						dos Alunos acertaram esta questão
 					</TextoResultado>
 				</Resultado>
+				
 
-				<BotaoRosa>
-					<TextoBotaoRosa>
-						Confirmar
-					</TextoBotaoRosa>
+				<BotaoRosa
+				onPress={ () =>
+					SetBtnText(btnText === "Concluido" ? "Confirmar" : "Conluido")
+				}>
+					<TextoBotaoRosa>{btnText}</TextoBotaoRosa>
 				</BotaoRosa>
+
 			</Container>
 		</>
 	);
 }
+
+
+const styles = StyleSheet.create({
+	redBorder: {
+	  borderWidth: 1,
+	  borderColor: "red",
+	},
+	redTxt: {
+		color: "red",
+	  },
+	greenTxt: {
+	color: "#3BCD7E",
+	},
+  });
