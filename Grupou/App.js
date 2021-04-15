@@ -1,12 +1,17 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { ScrollView } from 'react-native';
+import Pergunta from './pages/Pergunta/Perguntas';
 
 import { SafeAreaView } from 'react-native-safe-area-context';
 import PassoDois from './components/pagina_dois/PassoDois';
 import PassoUm from './components/pagina_dois/PassoUm';
 
 export default function App() {
+//   PR #pergunta
+// 		<ScrollView>
+// 			<Pergunta />
+// 		</ScrollView>
+// 	);
   return (
     <SafeAreaView style={styles.AndroidSafeArea}>
       <PassoDois></PassoDois>

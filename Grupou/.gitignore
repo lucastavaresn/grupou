@@ -8,6 +8,8 @@ npm-debug.*
 *.mobileprovision
 *.orig.*
 web-build/
+.editorconfig
+.eslintrc.json
 
 # macOS
 .DS_Store
