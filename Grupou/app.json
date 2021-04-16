@@ -23,6 +23,7 @@
         "backgroundColor": "#FFFFFF"
       },
       "softwareKeyboardLayoutMode": "pan"
+
     },
     "web": {
       "favicon": "./assets/favicon.png"

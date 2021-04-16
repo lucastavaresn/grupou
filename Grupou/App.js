@@ -8,21 +8,33 @@ import Dashboard from "./pages/Dashboard/Dashboard";
 import Pagina from "../Grupou/components/pagina_cinco/Pagina"
 import Login from "./pages/Login/Login";
 
+
 export default function App() {
     // PR #pergunta
   		// <ScrollView>
    		// 	<Pergunta />
    		// </ScrollView>
   return (
-    <SafeAreaView style={styles.AndroidSafeArea}>
+    //<SafeAreaView style={styles.AndroidSafeArea}>
       {/* <PassoDois></PassoDois> */}
       {/* <PassoUm></PassoUm> */}
       {/* <Pergunta/> */}
       {/* <Dashboard/> */}
-      <Login></Login>
+    //  <Login></Login>
       {/* <Pagina></Pagina> */}
-      <StatusBar style="auto" />
-    </SafeAreaView>
+    //  <StatusBar style="auto" />
+   // </SafeAreaView>
+    //  <SafeAreaView style={styles.AndroidSafeArea}>
+    //    {/* <PassoDois></PassoDois> */}
+    //    {/* <PassoUm></PassoUm> */}
+    //    {/* <Dashboard/> */}
+    //    <StatusBar style="auto" />
+    //  </SafeAreaView>
+     <View>
+       {/* <Pergunta /> */}
+       <Login/>
+     </View>
+
   );
 }
 
@@ -34,5 +46,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
+    paddingHorizontal: 0,
   },
 });
