@@ -40,7 +40,11 @@ export default function PassoUm() {
 }
 
 const styles = StyleSheet.create({
-  container: { width: 340, flex: 1 },
+  container: {
+    width: 340,
+    flex: 1,
+    alignSelf: "center"
+  },
   header: {
     flexDirection: "row",
     alignSelf: "flex-start",

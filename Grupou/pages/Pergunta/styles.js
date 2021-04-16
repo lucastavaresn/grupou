@@ -1,5 +1,8 @@
 import styled from 'styled-components/native';
 
+export const SView = styled.ScrollView`
+`
+
 export const Container = styled.View`
  	flex:1;
  	flex-direction:column;
@@ -13,14 +16,14 @@ export const Container = styled.View`
 export const BarraDeProgressoCinza = styled.View`
 	border: 2.8px solid #808080;
 	width:100%;
-	margin-top:22px;
+	/* margin-top:22px; */
 	position:absolute;
 `;
 
 export const BarraDeProgresso = styled.View`
 	border: 2.8px solid #e42d6b;
 	width:78%;
-	margin-top:22px;
+	/* margin-top:22px;	 */
 	border-radius: 2px;
 `;
 
@@ -62,6 +65,7 @@ export const TextoAlternativa = styled.Text`
 	/* font-family: Arial; */
 	color: 	#808080;
 	font-size: 18px;
+	padding-left: 5px;
 `;
 
 export const TextoColorido = styled.Text`
