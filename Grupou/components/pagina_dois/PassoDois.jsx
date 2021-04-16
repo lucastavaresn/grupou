@@ -4,7 +4,7 @@ import { Button, Icon } from "react-native-elements";
 import MyButton from "../pagina_cinco/MyButton";
 export default function PassoDois() {
   return (
-    <View style={{ flex: 1, width: 340}}>
+    <View style={{ flex: 1, width: 340, alignSelf: "center"}}>
         <View style={{ justifyContent: "flex-end", paddingTop: 30 }}>
           <Button
             icon={{

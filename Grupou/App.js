@@ -1,51 +1,38 @@
 import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { ScrollView, StyleSheet, StatusBar } from "react-native";
+import { ScrollView, StyleSheet, StatusBar, View } from "react-native";
 import Pergunta from "./pages/Pergunta/Perguntas";
 import PassoDois from "./components/pagina_dois/PassoDois";
 import PassoUm from "./components/pagina_dois/PassoUm";
 import Dashboard from "./pages/Dashboard/Dashboard";
-import Pagina from "../Grupou/components/pagina_cinco/Pagina"
+import {Pagina as Profile} from "../Grupou/components/pagina_cinco/Pagina";
 import Login from "./pages/Login/Login";
 
-
 export default function App() {
-    // PR #pergunta
-  		// <ScrollView>
-   		// 	<Pergunta />
-   		// </ScrollView>
   return (
-    //<SafeAreaView style={styles.AndroidSafeArea}>
+    <View style={styles.AndroidSafeArea}>
       {/* <PassoDois></PassoDois> */}
       {/* <PassoUm></PassoUm> */}
-      {/* <Pergunta/> */}
+      <Pergunta/>
       {/* <Dashboard/> */}
-    //  <Login></Login>
-      {/* <Pagina></Pagina> */}
-    //  <StatusBar style="auto" />
-   // </SafeAreaView>
-    //  <SafeAreaView style={styles.AndroidSafeArea}>
-    //    {/* <PassoDois></PassoDois> */}
-    //    {/* <PassoUm></PassoUm> */}
-    //    {/* <Dashboard/> */}
-    //    <StatusBar style="auto" />
-    //  </SafeAreaView>
-     <View>
-       {/* <Pergunta /> */}
-       <Login/>
-     </View>
+      {/* <Login></Login> */}
+      {/* <Profile></Profile> */}
+      <StatusBar style="auto" />
+    </View>
 
+    // <View>
+    //   <Pergunta />
+    // {/* //  <Login/> */}
+    // </View>
   );
 }
 
 const styles = StyleSheet.create({
   AndroidSafeArea: {
     flex: 1,
-    flexDirection: "column",
     backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-    paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
-    paddingHorizontal: 0,
+    // alignItems: "center",
+    // justifyContent: "center",
+    // paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
   },
 });

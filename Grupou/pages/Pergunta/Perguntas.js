@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Image } from 'react-native';
+import { Image, ScrollView } from 'react-native';
 import acerto from '../../assets/icones/icone_certo.png';
 import erro from '../../assets/icones/icone_errado.png';
 
@@ -18,7 +18,8 @@ import {
 	TextoResultado,
 	TextoResultadoAcertos,
 	BotaoRosa,
-	TextoBotaoRosa
+	TextoBotaoRosa,
+	SView
 } from './styles';
 
 export default function Pergunta() {
@@ -28,7 +29,7 @@ export default function Pergunta() {
 	const errada = 'errada';
 
 	return (
-		<>
+		<SView>
 			<BarraDeProgressoCinza />
 			<BarraDeProgresso />
 
@@ -101,6 +102,6 @@ export default function Pergunta() {
 				</BotaoRosa>
 
 			</Container>
-		</>
+		</SView>
 	);
 }
