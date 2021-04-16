@@ -14,18 +14,19 @@ export function InputText({label, placeholder, secure=false}) {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
-        flexDirection: "column"
     },
     textInput: {
-      width: "96%",
+      // width: "96%",
+      marginHorizontal: 20,
       padding: 10,
       borderColor: "#999CAE",
       borderWidth: 1,
       borderRadius: 5,
+      marginBottom: 10
 
     },
     textLabel: {
+      marginHorizontal: 20,
       color: "#999CAE",
       marginBottom: 10
     },

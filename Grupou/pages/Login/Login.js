@@ -42,7 +42,7 @@ export default function Login() {
                     </View>
                     <View style={styles.containerRow}>
                       <ButtonCustom text="Cadastre-se" press={pressButton} />
-                      <ButtonCustom text="Cadastre-se" filled={true} press={pressButton} />
+                      <ButtonCustom text="Entrar" filled={true} press={pressButton} />
                     </View>
                   </View>
 

@@ -4,8 +4,7 @@ import { Button, Icon } from "react-native-elements";
 import MyButton from "../pagina_cinco/MyButton";
 export default function PassoDois() {
   return (
-    <View style={{ flex: 1, width: 340,  }}>
-      <ScrollView style={{flex: 1}}>
+    <View style={{ flex: 1, width: 340}}>
         <View style={{ justifyContent: "flex-end", paddingTop: 30 }}>
           <Button
             icon={{
@@ -68,7 +67,7 @@ export default function PassoDois() {
             
           </View>
           <MyButton
-            button={[styles.button, { marginRight: 5 }]}
+            button={[styles.button, { marginRight: 5, paddingVertical: 25 }]}
             textButton={styles.textButton}
           >
             Voltar
@@ -76,34 +75,18 @@ export default function PassoDois() {
           <MyButton
             button={[
               styles.button,
-              { marginLeft: 5, backgroundColor: "#A51966" },
+              { marginLeft: 5, backgroundColor: "#A51966", paddingVertical: 25 },
             ]}
             textButton={[styles.textButton, { color: "#FFF" }]}
           >
             Concluir
           </MyButton>
         </View>
-      </ScrollView>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  button: {
-    alignSelf: "center",
-    fontWeight: "bold",
-    borderColor: "#A519669F",
-    borderWidth: 1,
-    backgroundColor: "#FFF",
-    alignItems: "center",
-    justifyContent: "center",
-    paddingVertical: 15,
-    paddingHorizontal: 15,
-    borderRadius: 5,
-    flex: 1,
-    margin: 5,
-    width: 150,
-  },
   textButton: {
     textAlign: "center",
     color: "#A51966",
@@ -146,7 +129,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 40,
     borderRadius: 5,
     flex: 1,
-    height: 60
+    height: 40
   },
   textButton: {
     textAlign: "center",

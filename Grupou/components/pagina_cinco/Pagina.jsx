@@ -88,6 +88,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     paddingTop: 60,
+    paddingHorizontal: 10
   },
   header: {
     flexDirection: "row",
@@ -123,12 +124,11 @@ const styles = StyleSheet.create({
   },
   buttonLilas: {
     fontWeight: "bold",
-    width: 150,
-    // flexDirection: "row",
+    flexDirection: "row",
     backgroundColor: "#A51966",
     alignItems: "center",
     justifyContent: "center",
-    paddingVertical: 30,
+    paddingVertical: 20,
     paddingHorizontal: 60,
     borderRadius: 5,
     width: 240,
