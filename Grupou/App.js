@@ -5,25 +5,20 @@ import Pergunta from "./pages/Pergunta/Perguntas";
 import PassoDois from "./components/pagina_dois/PassoDois";
 import PassoUm from "./components/pagina_dois/PassoUm";
 import Dashboard from "./pages/Dashboard/Dashboard";
-import {Pagina as Profile} from "../Grupou/components/pagina_cinco/Pagina";
+import Profile from "../Grupou/components/pagina_cinco/Pagina";
 import Login from "./pages/Login/Login";
 
 export default function App() {
   return (
     <View style={styles.AndroidSafeArea}>
-      {/* <PassoDois></PassoDois> */}
+      <PassoDois></PassoDois>
       {/* <PassoUm></PassoUm> */}
-      <Pergunta/>
+      {/* <Pergunta/> */}
       {/* <Dashboard/> */}
       {/* <Login></Login> */}
       {/* <Profile></Profile> */}
       <StatusBar style="auto" />
     </View>
-
-    // <View>
-    //   <Pergunta />
-    // {/* //  <Login/> */}
-    // </View>
   );
 }
 

@@ -1,6 +1,6 @@
 import { Avatar, Badge, Divider } from "react-native-elements";
 import React from "react";
-import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
+import {ScrollView, StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import Title from "./Title";
 import Subtitle from "./Subtitle";
 import PercentageBar from "./PercentageBar";
@@ -34,7 +34,7 @@ export default function Pagina() {
     { name: "Comunicação" },
   ];
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
       <View style={styles.header}>
         <View style={styles.viewAvatar}>
           <Avatar
@@ -80,15 +80,15 @@ export default function Pagina() {
       <View style={styles.viewButtonLilas}>
         <MyButton button={styles.buttonLilas} textButton={styles.buttonLilasText}>Fechar</MyButton>
       </View>
-    </View>
+    </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: 60,
-    paddingHorizontal: 10
+    paddingTop: 30,
+    paddingHorizontal: 10,
   },
   header: {
     flexDirection: "row",
@@ -120,6 +120,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "flex-end",
     flex: 1,
+    marginTop: 30,
     paddingBottom: 5,
   },
   buttonLilas: {

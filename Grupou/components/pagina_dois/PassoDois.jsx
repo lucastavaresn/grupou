@@ -4,7 +4,7 @@ import { Button, Icon } from "react-native-elements";
 import MyButton from "../pagina_cinco/MyButton";
 export default function PassoDois() {
   return (
-    <View style={{ flex: 1, width: 340, alignSelf: "center"}}>
+    <ScrollView style={{ flex: 1, width: 340, alignSelf: "center"}}>
         <View style={{ justifyContent: "flex-end", paddingTop: 30 }}>
           <Button
             icon={{
@@ -14,7 +14,7 @@ export default function PassoDois() {
               color: "#999CAE",
             }}
             buttonStyle={{ backgroundColor: "none" }}
-            containerStyle={{ alignSelf: "flex-end" }}
+            containerStyle={{ alignSelf: "flex-end", position: "absolute", top: 30 }}
           />
 
           <View
@@ -82,7 +82,7 @@ export default function PassoDois() {
             Concluir
           </MyButton>
         </View>
-    </View>
+    </ScrollView>
   );
 }
 
@@ -106,7 +106,7 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     borderRadius: 5,
     marginBottom: 20,
-    height: 60,
+    height: 50,
     paddingVertical: 10,
     paddingHorizontal: 20,
     fontSize: 15,
@@ -129,7 +129,8 @@ const styles = StyleSheet.create({
     paddingHorizontal: 40,
     borderRadius: 5,
     flex: 1,
-    height: 40
+    height: 40,
+    marginTop:30
   },
   textButton: {
     textAlign: "center",
